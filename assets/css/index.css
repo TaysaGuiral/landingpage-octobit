@@ -87,31 +87,41 @@ a{
 /*Main Page*/
 #main-content{
     max-width: 100%;
-    height: auto;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    gap: 0.15rem;
+    justify-content: space-evenly;
     align-items: center;
 }
-.intro-image-content img{
-    /* width: 89.625rem;
-    height: 43.75rem; */
-    max-width: 100%;
-    height: auto;
-}
 .intro-image-content{
-    margin-top: 5rem;
+    /*margin-top: 5rem;*/
+    display: flex;
+    align-items: center;
+    width: 70%;
+    height: 100vh;
+}
+.intro-image-content img{
+   /* width: 89.625rem;
+    height: 43.75rem;*/
+    width: 100%;
+    height: auto;
+
 }
 /*Texto animado da main page*/
 .container-text{
-    display: inline-flex;
-    margin-top: -10rem;
+    display: flex;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    margin-top: -8vw;
 }
 .container-text .estatic{
     position: relative;
-    font-size: 2.3rem;
+    font-size: 1.8vw;
+    /* font-size: 2.3rem; */
     letter-spacing: 0.5rem;
+    margin-top: -0.28vw;
 }
 .container-text .dinamic-text{
     margin-left: 2rem;
@@ -122,17 +132,16 @@ a{
 .dinamic-text li{
     text-transform: uppercase;
     color: var(--verde);
-    font-size: 2.3rem;
+    font-size: 1.8vw;
     letter-spacing: 0.1rem;
     list-style: none;
     position: relative;
-    margin-top: 0.1rem;
     top: 0;
     animation: slide 6s steps(3) infinite;
 }
 @keyframes slide{
    100%{
-    top:-9.2rem;
+    top:-9.3rem;
    }
 }
 .dinamic-text li span{
@@ -148,23 +157,42 @@ a{
     animation: typing 2s steps(10) infinite;
     background: #271D35;
 }
-@keyframes typing{
+@keyframes typing{ /*Auxilia no "surgimento" das letras*/
     100%{
         left: 100%;
         margin: 0 -35px 0 30px;
     }
 }
 /*Configuração icones de redes sociais*/
+.social-media{
+    width: 100%;
+    height: auto;
+    
+}
 .icones{
     list-style: none;
     display: flex;
+    justify-content: center;
     margin-top: 15rem;
+
+}
+.icones li{
+    margin-right: -8rem; /*Distância entre os icones*/
 
 }
 
 .icones img{
-    width: 3rem;
-    height: 3rem;
+    width: 25%;
+    height: auto;
+}
+.icones .intagram{
+    z-index: 0;
+}
+.icones .youtube{
+    z-index: 1;
+}
+.icones .linkedin{
+    z-index: 2;
 }
 .icones .intagram:hover{
     filter: drop-shadow(0px 0px 5px var(--verde));
@@ -238,15 +266,15 @@ a{
 }
 /*Sobre*/
 .title{
-    padding-top: 7rem;
+    padding-top: 7vw;
     display: flex;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 2vw;
     justify-content: center;
 }
 .title h2{
     font-family: "Open Sans", sans-serif;
-    font-size: 4rem;
+    font-size: 2.5vw;
     text-transform: uppercase;
     
 }
@@ -254,36 +282,36 @@ a{
     max-width: 18em;
     max-height: 12.5rem;
 }
-.sobre-content .text-body{
-    margin-bottom: 3rem;
-    font-size: 1.7rem;
-    color: var(--cinza-escuro);
-}
-.sobre-content .text-title{
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    text-shadow: 0.1rem 0.1rem 0.1rem var(--cinza-escuro);
-}
-.sobre-content{
-    margin: -4rem;
-    max-width: 64rem;
+.sobre-content .text-video{
+    width: 50%;
     height: 65vh;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
-    text-align: justify;
     margin-left: 3rem;
+}
+.sobre-content .text-title{
+    margin-left: 3rem;
+}
+.sobre-content .text-body p{
+    margin-bottom: 3rem;
+    font-size: 1.5vw;
+    text-align: justify;
+    color: var(--cinza-escuro);
+}
+.sobre-content .text-title p{
+    margin-bottom: 1rem;
+    font-size: 2vw;
+    text-shadow: 0.1rem 0.1rem 0.1rem var(--cinza-escuro);
 }
 .sobre-content video{
     max-width: 100%;
     height: auto;
 }
 .sobre-content .video-sobre{
-    margin-left: 10rem;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
+    margin-left: 3vw;
 }
+
 .box-dados{
     margin-top: 10rem;
     background: var(--verde);
@@ -368,14 +396,15 @@ a{
     
 }
 .section .equipe h4{
-    font-size: 1.5rem;   
+    font-size: 1.54vw;   
     color: white;
     text-transform: uppercase;
     text-shadow: 0.1rem 0.1rem 0.1rem var(--roxo);
     text-align: center;
 }
 .section .equipe p{
-    font-size: 1.3rem;   
+    font-size: 1vw;   
+    padding: 0.2rem;
     color: white;
     text-transform: uppercase;
     font-style: italic;
@@ -383,20 +412,21 @@ a{
 }
 .card-frente{
     margin: -1rem 4rem 2rem 4rem;
-    height: 20rem;
+    height: 16vw;
+    width: 16vw;
     border-radius: 0.6rem;
     transition: all 1s ease;
     backface-visibility: hidden;
-    width: 20rem;
+
 
 }
 .card-verso{
-    margin: -22rem 4rem 2rem 4rem;
-    height: 20rem;
+    margin: -17vw 4rem 2rem 4rem;
+    height: 16vw;
+    width: 16vw;
     border-radius: 0.6rem;
     transition: all 1s ease;
     backface-visibility: hidden;
-    width: 20rem;
     display: flex;
     justify-content: center;
     align-items: center; 
@@ -469,12 +499,27 @@ a{
     list-style: none;
     justify-content: center;
 }
-.redes-equipe img{
+.inf .redes-equipe img{
+    width: 45%;
+    height: auto;
+}
+.inf .redes-equipe li{
+    
+    margin-right: -8rem; /*Distância entre os icones*/
+}
+.redes-map .redes-equipe img{ /*Imagem dos contatos*/
     width: 4rem;
     height: 4rem;
 }
+.inf .intagram{
+    z-index: 0;
+}
+.inf .linkedin{
+    z-index: 1;
+}
 .inf .intagram:hover, .redes-map .intagram:hover{
     filter: drop-shadow(0px 0px 5px var(--roxo));
+
 }
 .inf .linkedin:hover, .redes-map .linkedin:hover{
     filter: drop-shadow(0px 0px 5px var(--roxo));
@@ -482,17 +527,29 @@ a{
 /*Portifolio*/
 .portfolio{
     display: flex;
-    width: 120rem;
-    max-height: 100vh;
-    flex-direction: row;
-    flex-wrap: wrap;
+    width: 100%;
+    height: 65vh;
+    flex-flow: column wrap;
     justify-content: center;
-    align-items: center;
     align-content: center;
-    gap: 5rem;
-    margin-left: 8rem;
-    margin-top: -2.4rem;
+    gap: 2rem;
+ 
+    margin-top: -3rem;
     
+}
+@media (min-width: 1900px){
+    .portfolio{
+        display: flex;
+        width: 100%;
+        height: 50vh;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-content: center;
+        gap: 2rem;
+     
+        margin-top: -3rem;
+        
+    }
 }
 .overlay{
     z-index: 1;
@@ -535,18 +592,9 @@ a{
 
 }
 /*Depoimentos*/
-#depoimentos{
-    width: 120rem;
-    height: 100vh;
-}
-.depoimentos{
-    min-width: 120rem;
-    padding: 0 10rem;
-    max-width: 90rem;
-    
-}
 .depoimentos-container{
     width: 100%;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -554,16 +602,17 @@ a{
 }
 
 .depoimentos i{
-    font-size: 9rem;
+    font-size: 7vw;
     color: var(--cinza);
 }
 .depoimentos p.depoimento-txt{
     font-weight: 9;
     margin-bottom: 4rem;
     text-align: justify;
+    font-size: 1.5vw;
 }
 .depoimentos .slide{
-    max-width: 90rem;
+    max-width: 60%;
 
 }
 .slide .empresa-pessoa{
@@ -584,6 +633,10 @@ a{
 }
 
 /*Contato*/
+#contato{
+    min-height: 85vh;
+    width: 100%;
+}
 .row iframe{
     width: 100%;
     height: 30rem;
@@ -591,11 +644,18 @@ a{
 }
 .row{
     width: 100%;
+    height: 30vh;
     display: flex;
     align-content: center;
     justify-content: center;
     align-items: center;
-    margin-top: 3rem;
+    justify-items: center;
+    margin-top: 3vw;
+}
+.button-config{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
 }
 .redes-map{
     background-color: var(--verde);
@@ -613,22 +673,22 @@ a{
     filter: drop-shadow(0px 0px 5px var(--roxo));
 }
 .redes-map .convite{
-    margin: 1.5rem;
+    margin: 1.2rem;
     text-align: center;
-    font-size: 2rem;
-    color: white;
+    font-size: 1.5vw;
+    color: var(--cinza-escuro);
     text-shadow: 0.1rem 0.1rem var(--roxo);
 
 }
 .redes-map .outros{
     text-align: center;
-    margin: 1.5rem;
-    font-size: 1.5rem;
-    color: white;
+    margin: 1rem;
+    font-size: 1vw;
+    color: var(--cinza-escuro);
     text-shadow: 0.1rem 0.1rem var(--roxo);
 }
 .redes-map .submit-button{
-    margin-left: 15rem;
+    
     width: 15rem;
     height: 3rem;
     background: var(--roxo);
